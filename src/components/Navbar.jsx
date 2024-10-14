@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 export default function Navbar(){
   return (
@@ -7,15 +7,25 @@ export default function Navbar(){
         <img src="/Main_page/logo.png" alt="" className='max-h-10'/>
       </div>
       <ul className='flex space-x-[10vw] font-normal text-sm font-afacad'>
-        <Link to="/">
+        <NavLink className={({isActive}) => {
+          return isActive ? 'text-blue-800' : '';
+        }} to="/">
           <li className='overline hover:cursor-pointer'>
             <p className='underline underline-offset-[6px]'>MAIN</p>
           </li>
-        </Link>
-        <Link to="/gallery"><li className='hover:cursor-pointer'>GALLERY</li></Link>
-        <Link to="/projects"><li className='hover:cursor-pointer'>PROJECTS</li></Link>
-        <Link to="/certifications"><li className='hover:cursor-pointer'>CERTIFICATIONS</li></Link>
-        <Link to="/contacts"><li className='hover:cursor-pointer'>CONTACTS</li></Link>
+        </NavLink>
+        <NavLink className={({isActive}) => {
+          return isActive ? 'text-blue-800' : '';
+        }} to="/gallery"><li className='hover:cursor-pointer'>GALLERY</li></NavLink>
+        <NavLink className={({isActive}) => {
+          return isActive ? 'text-blue-800' : '';
+        }} to="/projects"><li className='hover:cursor-pointer'>PROJECTS</li></NavLink>
+        <NavLink className={({isActive}) => {
+          return isActive ? 'text-blue-800' : '';
+        }} to="/certifications"><li className='hover:cursor-pointer'>CERTIFICATIONS</li></NavLink>
+        <NavLink className={({isActive}) => {
+          return isActive ? 'text-blue-800' : '';
+        }} to="/contacts"><li className='hover:cursor-pointer'>CONTACTS</li></NavLink>
       </ul>
     </nav>
   )
